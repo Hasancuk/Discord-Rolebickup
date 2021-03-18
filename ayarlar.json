@@ -1,16 +1,16 @@
 {
 
 
-"botOwner":"399975028885553153",
+"botOwner":"sahip İD",
 "botPrefix":"x!",
-"botToken":"ODAxNDcxNDA3MDg2MTA4Njkz.YAhKag.dnNErNmFG3uo-ClWITLPuWgZHRk",
-"guildID":"749325917960273960",
-"botVoiceChannelID":"749325917960273964",
+"botToken":"token",
+"guildID":"sunucu id",
+"botVoiceChannelID":"ses kanalı id",
 "logChannelID":"822198858083205120",
 "roleGuard":true,
-"whitelist":["799911515661926401"],
-"boosterRole":"799911526215319614",
-"jailRole":"802883595752439828"
+"whitelist":["yaptı eyleme izin verilen rol id"],
+"boosterRole":"booster rol id",
+"jailRole":"jail rol id"
 
 
 }
