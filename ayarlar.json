@@ -6,7 +6,7 @@
 "botToken":"token",
 "guildID":"sunucu id",
 "botVoiceChannelID":"ses kanalı id",
-"logChannelID":"822198858083205120",
+"logChannelID":"log kanalı id",
 "roleGuard":true,
 "whitelist":["yaptı eyleme izin verilen rol id"],
 "boosterRole":"booster rol id",
