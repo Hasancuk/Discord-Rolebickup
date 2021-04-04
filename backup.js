@@ -105,7 +105,7 @@ client.on("message", async message => {
       });
 
       let logKanali = client.channels.cache.get(ayarlar.logChannelID);
-      if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Yedeği Kullanıldı!').setDescription(`${message.author} (${message.author.id}) tarafından **${roleData.name} (${roleData.roleID})** rolünün yedeği kurulmaya başlandı! Rol tekrar oluşturularak, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(); } else { message.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Yedeği Kullanıldı!').setDescription(`${message.author} (${message.author.id}) tarafından **${roleData.name} (${roleData.roleID})** rolünün yedeği kurulmaya başlandı! Rol tekrar oluşturularak, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(err => {}); };
+      if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Yedeği Kullanıldı!').setDescription(`${message.author} (${message.author.id}) tarafından **${roleData.name} (${roleData.roleID})** rolünün yedeği kurulmaya başlandı! Rol tekrar oluşturularak, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(); } else { message.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Yedeği Kullanıldı!').setDescription(`${message.author} (${message.author.id}) tarafından **${roleData.name} (${roleData.roleID})** rolünün yedeği kurulmaya başlandı! Rol tekrar oluşturularak, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(err => {}); };
     });
   };
 });
@@ -124,7 +124,7 @@ function cezalandir(kisiID, tur) {
   let uye = client.guilds.cache.get(ayarlar.guildID).members.cache.get(kisiID);
   if (!uye) return;
   if (tur == "jail") return uye.roles.cache.has(ayarlar.boosterRole) ? uye.roles.set([ayarlar.boosterRole, ayarlar.jailRole]) : uye.roles.set([ayarlar.jailRole]);
-  if (tur == "ban") return uye.ban({ reason: "LASTARMY #TEKKRALLIK #LASTCODE" }).catch();
+  if (tur == "ban") return uye.ban({ reason: "İTEMSATİŞ #Hasanxuk #LASTCODE" }).catch();
 };
 // Sağtık yetki verme koruması
 client.on("guildMemberUpdate", async (oldMember, newMember) => {
@@ -135,7 +135,7 @@ client.on("guildMemberUpdate", async (oldMember, newMember) => {
       cezalandir(entry.executor.id, "ban");
       newMember.roles.set(oldMember.roles.cache.map(r => r.id));
       let logKanali = client.channels.cache.get(ayarlar.logChannelID);
-      if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Sağ Tık Yetki Verildi!').setDescription(`${newMember} (${newMember.id}) üyesine ${entry.executor} (${entry.executor.id}) tarafından sağ tık yetki verildi! Veren kişi yasaklandı ve verilen kişiden rol geri alındı.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(); } else { newMember.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Sağ Tık Yetki Verildi!').setDescription(`${newMember} (${newMember.id}) üyesine ${entry.executor} (${entry.executor.id}) tarafından sağ tık yetki verildi! Veren kişi yasaklandı ve verilen kişiden rol geri alındı.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(err => {}); };
+      if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Sağ Tık Yetki Verildi!').setDescription(`${newMember} (${newMember.id}) üyesine ${entry.executor} (${entry.executor.id}) tarafından sağ tık yetki verildi! Veren kişi yasaklandı ve verilen kişiden rol geri alındı.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(); } else { newMember.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Sağ Tık Yetki Verildi!').setDescription(`${newMember} (${newMember.id}) üyesine ${entry.executor} (${entry.executor.id}) tarafından sağ tık yetki verildi! Veren kişi yasaklandı ve verilen kişiden rol geri alındı.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(err => {}); };
     };
   };
 });
@@ -143,10 +143,10 @@ client.on("guildMemberUpdate", async (oldMember, newMember) => {
 client.on("roleCreate", async role => {
   let entry = await role.guild.fetchAuditLogs({type: 'ROLE_CREATE'}).then(audit => audit.entries.first());
   if (!entry || !entry.executor || Date.now()-entry.createdTimestamp > 5000 || guvenli(entry.executor.id) || !ayarlar.roleGuard) return;
-  role.delete({ reason: "LASTARMY #TEKKRALLIK #LASTCODE" });
+  role.delete({ reason: "İTEMSATİŞ #Hasanxuk #LASTCODE" });
   cezalandir(entry.executor.id, "jail");
   let logKanali = client.channels.cache.get(ayarlar.logChannelID);
-  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Oluşturuldu!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından bir rol oluşturuldu! Oluşturan kişi jaile atıldı ve rol silindi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(); } else { role.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Oluşturuldu!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından bir rol oluşturuldu! Oluşturan kişi jaile atıldı ve rol silindi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(err => {}); };
+  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Oluşturuldu!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından bir rol oluşturuldu! Oluşturan kişi jaile atıldı ve rol silindi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(); } else { role.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Oluşturuldu!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından bir rol oluşturuldu! Oluşturan kişi jaile atıldı ve rol silindi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(err => {}); };
 });
 // Rol güncelleme koruması
 client.on("roleUpdate", async (oldRole, newRole) => {
@@ -165,7 +165,7 @@ client.on("roleUpdate", async (oldRole, newRole) => {
     mentionable: oldRole.mentionable
   });
   let logKanali = client.channels.cache.get(ayarlar.logChannelID);
-  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Güncellendi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${oldRole.name}** rolü güncellendi! Güncelleyen kişi jaile atıldı ve rol eski haline getirildi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(); } else { newRole.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Güncellendi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${oldRole.name}** rolü güncellendi! Güncelleyen kişi jaile atıldı ve rol eski haline getirildi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(err => {}); };
+  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Güncellendi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${oldRole.name}** rolü güncellendi! Güncelleyen kişi jaile atıldı ve rol eski haline getirildi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(); } else { newRole.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Güncellendi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${oldRole.name}** rolü güncellendi! Güncelleyen kişi jaile atıldı ve rol eski haline getirildi.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(err => {}); };
 });
 // Rol sililince yapanı banlayıp rolüü tekrar dağıtan kısım
 client.on("roleDelete", async role => {
@@ -215,7 +215,7 @@ client.on("roleDelete", async role => {
   });
 
   let logKanali = client.channels.cache.get(ayarlar.logChannelID);
-  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Silindi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${role.name} (${role.id})** rolü silindi, silen kişi banlandı! Rol tekrar oluşturuldu, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(); } else { role.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Silindi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${role.name} (${role.id})** rolü silindi, silen kişi banlandı! Rol tekrar oluşturuldu, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(err => {}); };
+  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Silindi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${role.name} (${role.id})** rolü silindi, silen kişi banlandı! Rol tekrar oluşturuldu, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(); } else { role.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('Rol Silindi!').setDescription(`${entry.executor} (${entry.executor.id}) tarafından **${role.name} (${role.id})** rolü silindi, silen kişi banlandı! Rol tekrar oluşturuldu, üyelerine dağıtılmaya ve izinleri kanallara eklenmeye başlanıyor.`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(err => {}); };
 });
 
 // Backup alma fonksiyonu
@@ -279,6 +279,6 @@ function ytKapat(guildID) {
   });
   // loglandırma fonksiyonu
   let logKanali = client.channels.cache.get(ayarlar.logChannelID);
-  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('İzinler Kapatıldı!').setDescription(`Rollerin yetkileri kapatıldı!`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İtemsatış"} #Hasanxuk!`).setTimestamp()).catch(); } else { channel.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('İzinler Kapatıldı!').setDescription(`Rollerin yetkileri kapatıldı!`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "LASTARMY"} #TEKKRALLIK!`).setTimestamp()).catch(err => {}); };
+  if (logKanali) { logKanali.send(new MessageEmbed().setColor("#00ffdd").setTitle('İzinler Kapatıldı!').setDescription(`Rollerin yetkileri kapatıldı!`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İtemsatış"} #Hasanxuk!`).setTimestamp()).catch(); } else { channel.guild.owner.send(new MessageEmbed().setColor("#00ffdd").setTitle('İzinler Kapatıldı!').setDescription(`Rollerin yetkileri kapatıldı!`).setFooter(`${client.users.cache.has(ayarlar.botOwner) ? client.users.cache.get(ayarlar.botOwner).tag : "İTEMSATİŞ"} #Hasanxuk!`).setTimestamp()).catch(err => {}); };
 };
 client.login(ayarlar.botToken).then(c => console.log(`${client.user.tag} olarak giriş yapıldı!`)).catch(err => console.error("Bota giriş yapılırken başarısız olundu!"));
